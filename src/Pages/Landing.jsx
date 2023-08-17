@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
-    <div className=" w-screen h-screen flex flex-col gap-48 bg-gray-800">
+    <div className=" w-screen h-screen flex flex-col gap-48 bg-white">
       <Nav />
 
       <div className=" grid place-content-center gap-4">
-        <h1 className=" text-4xl font-bold text-white">
+        <h1 className=" text-4xl font-bold text-black">
           Welcome To Sail Student Management Portal
         </h1>
         <Link to='/dashboard'>
