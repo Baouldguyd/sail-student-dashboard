@@ -6,7 +6,7 @@ const Dashboard = () => {
   return (
     <div className=' flex h-[100vh] w-screen'>
       <Sidebar/>
-      <Contentpage/>
+      <Contentpage />
     </div>
   )
 }

@@ -45,33 +45,33 @@ const Sidebar = () => {
                 <button className=' w-[90%] h-[45px] p-[9px 83px 8px 10px] rounded-md text-[1rem] m-[auto] gap-[14px]'
                     style={
                         buttonStyle
-                    }><BookOutlined className=' mr-[1rem]' />    Course</button>
+                    }><BookOutlined className=' mr-[1rem]' />    Course Content</button>
 
                 <button className=' w-[90%] h-[45px] p-[9px 83px 8px 10px] rounded-md text-[1rem] m-[auto] gap-[14px]'
                     style={
                         buttonStyle
                     }
-                ><FolderOpenOutlined className=' mr-[1rem]' />   Resources</button>
+                ><FolderOpenOutlined className=' mr-[1rem]' />   Tasks</button>
                 <button className=' w-[90%] h-[45px] p-[9px 83px 8px 10px] rounded-md text-[1rem] m-[auto] gap-[14px]'
                     style={
                         buttonStyle
                     }
-                > <CommentOutlined className=' mr-[1rem]' />   Discussion</button>
+                > <CommentOutlined className=' mr-[1rem]' />   Attendance</button>
                 <button className=' w-[90%] h-[45px] p-[9px 83px 8px 10px] rounded-md text-[1rem] m-[auto] gap-[14px]'
                     style={
                         buttonStyle
                     }
-                ><CalendarOutlined className=' mr-[1rem]' />   Schedule</button>
+                ><CalendarOutlined className=' mr-[1rem]' />   Program Duration</button>
                 <button className=' w-[90%] h-[45px] p-[9px 83px 8px 10px] rounded-md text-[1rem] m-[auto] gap-[14px]'
                     style={
                         buttonStyle
                     }
                 ><UserOutlined className=' mr-[1rem]' />   My Account</button>
-                <button className=' w-[90%] h-[45px] p-[9px 83px 8px 10px] rounded-md text-[1rem] m-[auto] gap-[14px]'
+                <a href="/settings"><button className=' w-[90%] h-[45px] p-[9px 83px 8px 10px] rounded-md text-[1rem] m-[auto] gap-[14px]'
                     style={
                         buttonStyle
                     }
-                ><SettingOutlined className=' mr-[1rem]' />   Settings</button>
+                ><SettingOutlined className=' mr-[1rem]' />   Settings</button></a>
             </div>
 
             <div className='logout gap-[2rem]'>
