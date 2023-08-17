@@ -3,7 +3,7 @@ module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
     extend: {fontFamily: {
-      custom: ['Lexend', 'sans-serif'],
+      custom: ['Poppins', 'sans-serif'],
     },},
   },
   plugins: [],
