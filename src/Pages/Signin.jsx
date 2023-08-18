@@ -89,7 +89,7 @@ const Signin = () => {
                   Password
                 </label>
                 <div className="text-sm">
-                  <a href="/" className="font-semibold text-blue-600 hover:text-indigo-500">
+                  <a href="" className="font-semibold text-blue-600 hover:text-indigo-500">
                     Forgot password?
                   </a>
                 </div>
