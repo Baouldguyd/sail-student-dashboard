@@ -23,7 +23,7 @@ const Sidebar = () => {
     { title: "Task", icon: <AiOutlineSnippets />, path: '/task' },
     { title: "Program Duration", icon: <AiOutlineDashboard />, path:'/programduration' },
     { title: "Settings", icon: <AiFillSetting/>, path:'/settings', spacing: true},
-    { title: "Logout", icon: <AiOutlineExport />, path:'/logout' },
+    { title: "Logout", icon: <AiOutlineExport />, path:'/signin' },
   ];
 
   return (
