@@ -42,12 +42,12 @@ const learningStyle = {
     display: 'flex',
     justifyContent: 'space-evenly',
 
-    width: '336px',
+    width: '400px',
     height: 'auto',
     flexShrink: 0,
     borderRadius: '20px',
     background: 'var(--secondary-primary-white, #FFF)',
-    padding: '1rem'
+    padding: '1rem 3.5rem 1rem 0'
 }
 
 const discussionStyle = {
@@ -135,7 +135,29 @@ const Content = () => {
                             letterSpacing: '-0.48px'
                         }}
                         >4 Modules</p>
+                        <div className='flex flex-row text-[14px] font-bold pb-[10px] justify-center items-center gap-[1rem] tracking-tight'>
+                        <h6>HTML</h6>
                         <DownloadButton />
+
+                        </div>
+
+                        <div className='flex flex-row text-[14px] font-bold pb-[10px] justify-center items-center gap-[1rem] tracking-tight'>
+                        <h6 >CSS</h6>
+                        <DownloadButton />
+
+                        </div>
+                        <div className='flex flex-row text-[14px] font-bold pb-[10px] justify-center items-center gap-[1rem] tracking-tight'>
+                        <h6 >Js.</h6>
+                        <DownloadButton />
+
+                        </div>
+                        
+                        <div className='flex flex-row text-[14px] font-bold pb-[10px] justify-center items-center gap-[0.8rem] tracking-tight'>
+                        <h6 >REACT</h6>
+                        <DownloadButton />
+
+                        </div>
+                        
 
 
 
@@ -181,7 +203,28 @@ const Content = () => {
                             letterSpacing: '-0.48px'
                         }}
                         >3 Modules</p>
+                         
+                         <div className='flex flex-col justify-center items-center'>
+                        <div className='flex flex-row text-[14px] font-bold pb-[10px] justify-center items-center gap-[1rem] tracking-tight'>
+                        <h6 >R.</h6>
                         <DownloadButton />
+
+                        </div>
+
+                        <div className='flex flex-row text-[14px] font-bold pb-[10px] justify-center items-center gap-[1rem] tracking-tight'>
+                        <h6 >Python</h6>
+                        <DownloadButton />
+                        </div>
+
+                        <div className='flex flex-row text-[14px] font-bold pb-[10px] pr-[2.2rem] justify-center items-center gap-[1rem] tracking-tight'>
+                        <h6 >Data Wrangling</h6>
+                        <DownloadButton />
+
+                        </div>
+
+                         </div>
+
+
                     </div>
 
 
@@ -227,8 +270,26 @@ const Content = () => {
                             lineHeight: '32px',
                             letterSpacing: '-0.48px'
                         }}
-                        >4 Modules</p>
+                        >3 Modules</p>
+                         <div className='flex flex-col justify-center items-center'>
+                        <div className='flex flex-row text-[14px] font-bold pb-[10px] justify-center items-center gap-[1rem] tracking-tight'>
+                        <h6 > Physics</h6>
                         <DownloadButton />
+
+                        </div>
+
+                        <div className='flex flex-row text-[14px] font-bold pb-[10px] justify-center items-center gap-[1rem] tracking-tight'>
+                        <h6 >Maths.</h6>
+                        <DownloadButton />
+                        </div>
+
+                        <div className='flex flex-row text-[14px] font-bold pb-[10px] pr-[2.2rem] justify-center items-center gap-[1rem] tracking-tight'>
+                        <h6 >Engineering</h6>
+                        <DownloadButton />
+
+                        </div>
+
+                         </div>
 
 
 
@@ -241,11 +302,11 @@ const Content = () => {
 
                 <div className='activites' style={learningStyle}>
                     <div style={{
-                        backgroundImage: "linear-gradient(rgba(134, 140, 255, 1), rgba(0, 102, 255, 1))",
+                        // backgroundImage: "linear-gradient(rgba(134, 140, 255, 1), rgba(0, 102, 255, 1))",
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        width: '60px',
+                        width: '80px',
                         height: '60px',
                         flexShrink: 0,
                         borderRadius: '50%'
@@ -273,7 +334,7 @@ const Content = () => {
                             lineHeight: '32px',
                             letterSpacing: '-0.48px'
                         }}
-                        >3 Modules</p>
+                        >1 Module</p>
                         
                         <DownloadButton />
                     </div>
