@@ -1,18 +1,13 @@
-import React from 'react'
-// import { useHistory } from 'react-router-dom';
-import Avatar from "../Assets/avatar.svg"
-// import EditProfile from "../Pages/EditProfile"
+import React from 'react';
+import Avatar from "../Assets/avatar.svg";
+
 
 
 
 const UserSettings = () => {
 
 
-    // const history = useHistory();
 
-    // const handleEditProfile = () => {
-    //     history.push('/edit-profile'); 
-    //   };
 
 
 
@@ -34,7 +29,7 @@ const UserSettings = () => {
 
 
                         <div className='h-36 border-b border-r'>
-                        <div className='pt-2'> <button  className='bg-blue-500 rounded-2xl text-white text-xs absolute right-20 p-2'>Edit Profile</button></div>
+                        <div className='pt-2'> <button  className='bg-blue-500 rounded-2xl text-white text-xs absolute right-20 p-2'>Edit Profile</button> </div>
                             <h1 className='text-xl font-bold pt-1'>Folajomi Bello</h1>
                             <p className='text-xs'>Student Id: 14G00855TT</p>
                             <p className='text-xs'>Students <button className='bg-teal-500 text-white rounded-xl p-1'>FULL TIME COURSE</button></p>
