@@ -8,8 +8,8 @@ import Tasks from "./Pages/Tasks";
 import Attendance from "./Pages/Attendance";
 import ProgramDuration from "./Pages/ProgramDuration";
 import CourseContent from "./Pages/CourseContent";
-import Settings from "../src/Pages/UserSettings";
-
+import Settings from "./Pages/UserSettings";
+import EditProfile from "./Pages/EditProfile";
 
 const App = () => {
   return (
@@ -24,6 +24,7 @@ const App = () => {
         <Route path="/programduration" element={<ProgramDuration />} />
         <Route path="/attendance" element={<Attendance />} />
         <Route path="/Settings" element={<Settings/>}/>
+        <Route path="/editprofile" element={<EditProfile/>}/>
 
         
       </Routes>
