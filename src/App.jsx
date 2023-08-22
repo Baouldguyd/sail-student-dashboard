@@ -8,12 +8,14 @@ import Tasks from "./Pages/Tasks";
 import Attendance from "./Pages/Attendance";
 import ProgramDuration from "./Pages/ProgramDuration";
 import CourseContent from "./Pages/CourseContent";
-import Settings from "./Pages/UserSettings";
+import UserSettings from "./Pages/UserSettings";
 import EditProfile from "./Pages/EditProfile";
+import { UserProvider } from "./Pages/UserContext";
 
 const App = () => {
   return (
     <BrowserRouter>
+     <UserProvider>
       <Routes>
       <Route path="/" element={<Reset />} />
         <Route path="/signin" element={<Signin />} />
@@ -23,11 +25,12 @@ const App = () => {
         <Route path="/task" element={<Tasks />} />
         <Route path="/programduration" element={<ProgramDuration />} />
         <Route path="/attendance" element={<Attendance />} />
-        <Route path="/Settings" element={<Settings/>}/>
+        <Route path="/settings" element={<UserSettings />}/>
         <Route path="/editprofile" element={<EditProfile/>}/>
-
+      
         
       </Routes>
+      </UserProvider>
     </BrowserRouter>
     
   )
