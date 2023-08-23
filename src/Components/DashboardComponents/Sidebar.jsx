@@ -45,10 +45,10 @@ const Sidebar = () => {
                   nav.spacing ? "mt-9" : "mt-2"
                 } mt-2 ${nav.path === location.pathname ? "bg-blue-600" : ""}`}
               >
-                <Link to={nav.path}>
+                <Link to={nav.path} className={nav.path === location.pathname ? "active-link" : ""}>
                 <span className="text-2xl block float-left">{nav.icon}</span>
                 </Link>
-                <Link to={nav.path}>
+                <Link to={nav.path} className={nav.path === location.pathname ? "active-link" : ""}>
                 <span className="text-sm font-bold flex-1">
                   {nav.title}
                 </span>

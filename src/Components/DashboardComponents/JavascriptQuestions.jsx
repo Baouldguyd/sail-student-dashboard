@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import TaskQuestions from "./TaskQuestions";
+
 
 const JavascriptQuestions = () => {
     const tasks = [
