@@ -8,6 +8,8 @@ import Tasks from "./Pages/Tasks";
 import Attendance from "./Pages/Attendance";
 import ProgramDuration from "./Pages/ProgramDuration";
 import CourseContent from "./Pages/CourseContent";
+import Logout from "./Pages/Logout";
+import TaskQuestions from "./Components/DashboardComponents/TaskQuestions";
 
 
 const App = () => {
@@ -20,8 +22,10 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/coursecontent" element={<CourseContent />} />
         <Route path="/task" element={<Tasks />} />
+        <Route path="/details" element={<TaskQuestions/>} />
         <Route path="/programduration" element={<ProgramDuration />} />
         <Route path="/attendance" element={<Attendance />} />
+        <Route path="/logout" element={<Logout />} />
 
         
       </Routes>
