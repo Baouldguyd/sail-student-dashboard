@@ -2,6 +2,7 @@ import React from 'react'
 import {useState} from 'react'
 import logo from "../Assets/Sail logo.png"
 import { Link } from 'react-router-dom'
+import axios from 'axios';
 
 const Signin = () => {
   
@@ -37,15 +38,30 @@ const Signin = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      // Form is valid, you can proceed with form submission or other actions
-      console.log('Form submitted with data:', formInfo);
+      try {
+        // Form is valid, send a POST request to the API
+        const response = await axios.post(
+          'https://ssmp-api.onrender.com/api/v1/user/login',
+          formInfo
+        );
+
+        // Handle the response, e.g., redirect to a new page on successful login
+        console.log('Login successful:', response.data);
+       
+        
+        // Redirect to a new page after successful login
+      } catch (error) {
+        console.error('Login failed:', error);
+      }
     } else {
       console.log('Form has errors');
     }
   };
+
 
 
   return (
@@ -77,7 +93,7 @@ const Signin = () => {
                   autoComplete="email"
                   required
                   onChange={handleInputChange}
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
                     {errors.email && <p className="text-red-500">{errors.email}</p>}
               </div>
@@ -102,17 +118,17 @@ const Signin = () => {
                   autoComplete="current-password"
                   required
                   onChange={handleInputChange}
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
                 {errors.password && <p className="text-red-500">{errors.password}</p>}
               </div>
             </div>
 
             <div>
-                <Link to= "/landing">
+                <Link to= "/dashboard">
                 <button
                 type="submit"
-                className="flex w-full justify-center rounded-md  bg-blue-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full justify-center rounded-md  bg-blue-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
               >
                 Sign in
               </button>
