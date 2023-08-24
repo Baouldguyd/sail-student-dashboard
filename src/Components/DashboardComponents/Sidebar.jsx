@@ -23,7 +23,7 @@ const Sidebar = () => {
     { title: "Task", icon: <AiOutlineSnippets />, path: '/task' },
     { title: "Program Duration", icon: <AiOutlineDashboard />, path:'/programduration' },
     { title: "Settings", icon: <AiFillSetting/>, path:'/settings', spacing: true},
-    { title: "Logout", icon: <AiOutlineExport />, path:'/logout' },
+    { title: "Logout", icon: <AiOutlineExport />, path:'/signin' },
   ];
 
   return (
@@ -45,10 +45,10 @@ const Sidebar = () => {
                   nav.spacing ? "mt-9" : "mt-2"
                 } mt-2 ${nav.path === location.pathname ? "bg-blue-600" : ""}`}
               >
-                <Link to={nav.path}>
+                <Link to={nav.path} className={nav.path === location.pathname ? "active-link" : ""}>
                 <span className="text-2xl block float-left">{nav.icon}</span>
                 </Link>
-                <Link to={nav.path}>
+                <Link to={nav.path} className={nav.path === location.pathname ? "active-link" : ""}>
                 <span className="text-sm font-bold flex-1">
                   {nav.title}
                 </span>
