@@ -8,15 +8,9 @@ import Tasks from "./Pages/Tasks";
 import Attendance from "./Pages/Attendance";
 import ProgramDuration from "./Pages/ProgramDuration";
 import CourseContent from "./Pages/CourseContent";
-<<<<<<< HEAD
-import UserSettings from "./Pages/UserSettings";
-import EditProfile from "./Pages/EditProfile";
-import { UserProvider } from "./Pages/UserContext";
-=======
 import Logout from "./Pages/Logout";
 import TaskQuestions from "./Components/DashboardComponents/TaskQuestions";
 
->>>>>>> 69801da1c35d8f07e4eb15ef44ff535a01990265
 
 const App = () => {
   return (
@@ -32,14 +26,8 @@ const App = () => {
         <Route path="/details" element={<TaskQuestions/>} />
         <Route path="/programduration" element={<ProgramDuration />} />
         <Route path="/attendance" element={<Attendance />} />
-<<<<<<< HEAD
-        <Route path="/settings" element={<UserSettings />}/>
-        <Route path="/editprofile" element={<EditProfile/>}/>
-      
-=======
         <Route path="/logout" element={<Logout />} />
 
->>>>>>> 69801da1c35d8f07e4eb15ef44ff535a01990265
         
       </Routes>
       </UserProvider>
