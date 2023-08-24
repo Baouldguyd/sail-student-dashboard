@@ -15,6 +15,7 @@ import TaskQuestions from "./Components/DashboardComponents/TaskQuestions";
 const App = () => {
   return (
     <BrowserRouter>
+     <UserProvider>
       <Routes>
       <Route path="/" element={<Reset />} />
         <Route path="/signin" element={<Signin />} />
@@ -29,6 +30,7 @@ const App = () => {
 
         
       </Routes>
+      </UserProvider>
     </BrowserRouter>
     
   )
