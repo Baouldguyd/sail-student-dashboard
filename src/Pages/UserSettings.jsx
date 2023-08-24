@@ -2,12 +2,18 @@ import React from "react";
 import Avatar from "../Assets/avatar.svg";
 import { Link } from 'react-router-dom';
 import { useUserContext } from "../Pages/UserContext";
+import Sidebar from "../Components/DashboardComponents/Sidebar";
 
 const UserSettings = () => {
     const { userInfo } = useUserContext();
 
     return (
-        <div className='bg-gray-300 h-screen pt-8'>
+         <div className=" flex ">
+            <div>
+                <Sidebar/>
+            </div>
+
+            <div className='bg-gray-300 h-screen pt-8'>
             <h1 className='pl-14 text-xl font-bold'>Dashboard</h1>
             <p className='pl-14 text-xs' >Dashboard  {userInfo.firstName}'s Profile</p>
 
@@ -54,6 +60,8 @@ const UserSettings = () => {
                 </div>
             </div>
         </div>
+    </div>
+
     );
 }
 
