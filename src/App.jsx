@@ -10,6 +10,7 @@ import ProgramDuration from "./Pages/ProgramDuration";
 import CourseContent from "./Pages/CourseContent";
 import Logout from "./Pages/Logout";
 import TaskQuestions from "./Components/DashboardComponents/TaskQuestions";
+import { UserProvider } from './Pages/UserContext';
 
 
 const App = () => {

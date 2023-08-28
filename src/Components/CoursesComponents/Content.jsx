@@ -142,19 +142,22 @@ const Content = () => {
                         </div>
 
                         <div className='flex flex-row text-[14px] font-bold pb-[10px] justify-center items-center gap-[1rem] tracking-tight'>
-                        <h6 >CSS</h6>
+                        <h6 className='pr-2' >CSS</h6>
                         <DownloadButton />
 
                         </div>
                         <div className='flex flex-row text-[14px] font-bold pb-[10px] justify-center items-center gap-[1rem] tracking-tight'>
-                        <h6 >Js.</h6>
+                        <h6 className='pr-4' >Js.</h6>
                         <DownloadButton />
 
                         </div>
                         
                         <div className='flex flex-row text-[14px] font-bold pb-[10px] justify-center items-center gap-[0.8rem] tracking-tight'>
                         <h6 >REACT</h6>
+                        <div className='pr-2'>
                         <DownloadButton />
+
+                        </div>
 
                         </div>
                         
@@ -206,7 +209,7 @@ const Content = () => {
                          
                          <div className='flex flex-col justify-center items-center'>
                         <div className='flex flex-row text-[14px] font-bold pb-[10px] justify-center items-center gap-[1rem] tracking-tight'>
-                        <h6 >R.</h6>
+                        <h6 className='pr-8' >R.</h6>
                         <DownloadButton />
 
                         </div>
@@ -218,7 +221,10 @@ const Content = () => {
 
                         <div className='flex flex-row text-[14px] font-bold pb-[10px] pr-[2.2rem] justify-center items-center gap-[1rem] tracking-tight'>
                         <h6 >Data Wrangling</h6>
+                        <div className='pr-4'>
                         <DownloadButton />
+
+                        </div>
 
                         </div>
 
