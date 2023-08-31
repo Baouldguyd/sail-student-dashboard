@@ -1,7 +1,6 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { UserProvider } from './Pages/UserContext';
-import { BrowserRouter, Routes, Route, UserProvider } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Reset from "./Pages/Reset"
 import Landing from "./Pages/Landing"
 import Signin from './Pages/Signin'
