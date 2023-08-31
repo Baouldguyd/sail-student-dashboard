@@ -1,8 +1,9 @@
 import React from 'react'
 import {useState} from 'react'
 import logo from "../Assets/Sail logo.png"
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Signin = () => {
   
@@ -38,29 +39,46 @@ const Signin = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
+ 
+  try {
+
     if (validateForm()) {
-      try {
-        // Form is valid, send a POST request to the API
-        const response = await axios.post(
-          'https://ssmp-api.onrender.com/api/v1/user/login',
-          formInfo
-        );
+      const { email, password } = formInfo;
+      console.log(email , password);
+    // Form is valid, send a POST request to the API
+    const response = await axios.post(
+      'https://ssmp-api.onrender.com/api/v1/user/login',
+      { email, password }
+    );
 
-        // Handle the response, e.g., redirect to a new page on successful login
-        console.log('Login successful:', response.data);
-       
-        
-        // Redirect to a new page after successful login
-      } catch (error) {
-        console.error('Login failed:', error);
-      }
-    } else {
-      console.log('Form has errors');
-    }
-  };
+    // Handle the response, e.g., redirect to a new page on successful login
+    console.log('Login successful:', response.data.data);
+
+    // Store the token in session storage
+    sessionStorage.setItem('token', response.data.data.token);
+
+    // Navigate to the dashboard page
+    navigate('/dashboard');
+   }
+   else {
+    console.log('Form has errors');
+    window.alert('Incorrect Login detaisl, Kindly Try again')
+  }
+    
+  }
+
+  catch (error) {
+    console.error('Login failed:', error);
+    window.alert( error.response.data.responseMessage)
+    
+  }
+
+   
+};
 
 
 
@@ -105,7 +123,7 @@ const Signin = () => {
                   Password
                 </label>
                 <div className="text-sm">
-                  <a href="" className="font-semibold text-blue-600 hover:text-indigo-500">
+                  <a href="/" className="font-semibold text-blue-600 hover:text-indigo-500">
                     Forgot password?
                   </a>
                 </div>
@@ -125,14 +143,15 @@ const Signin = () => {
             </div>
 
             <div>
-                <Link to= "/dashboard">
+                {/* <Link to= "/dashboard"> */}
                 <button
-                type="submit"
+                type="primary"
+                htmlType="submit"
                 className="flex w-full justify-center rounded-md  bg-blue-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
               >
                 Sign in
               </button>
-                </Link>
+                {/* </Link> */}
             </div>
           </form>
         </div>
@@ -141,4 +160,4 @@ const Signin = () => {
   )
 }
 
-export default Signin
+export default Signin;
