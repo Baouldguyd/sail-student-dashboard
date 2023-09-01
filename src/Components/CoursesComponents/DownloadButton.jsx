@@ -1,9 +1,8 @@
 
-import { BookOutlined, DownloadOutlined, Html5Outlined, } from '@ant-design/icons';
+import { BookOutlined, DownloadOutlined, } from '@ant-design/icons';
 import { Button,  Space } from 'antd';
 
 const DownloadButton = () => {
-//   const [size, setSize] = useState('large'); // default is 'middle'
 
   return (
 
@@ -20,7 +19,7 @@ const DownloadButton = () => {
           <Button type="primary"  
           icon={ <DownloadOutlined  />}>
             <BookOutlined/>
-            Download
+            View
           </Button>
         </Space>
       </Space>

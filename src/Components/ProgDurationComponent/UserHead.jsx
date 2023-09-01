@@ -1,5 +1,6 @@
-import React from 'react'
-import { SearchOutlined } from '@ant-design/icons'
+import React, {useState, useEffect} from 'react'
+import axios from 'axios';
+
 
 const UserHead = () => {
     const nameStyle = {
@@ -20,25 +21,46 @@ const UserHead = () => {
         letterSpacing: '-0.68px'
     }
     
-    const searchBoxStyle = {
-        width: '15rem',
-        height: '3rem',
-        flexShrink: 0,
-        padding: '1rem',
-        borderRadius: '10px',
-        boxShadow: '0px 4px 4px 0px rgba(244, 247, 254, 0.25)'
-    }
+
+    const [userProfile, setUserProfile] = useState(null); // State to hold user profile data
+
+    const token = sessionStorage.getItem('token')
+  
+    useEffect(() => {
+      const fetchUserProfile = async () => {
+        try {
+          const response = await axios.get("https://ssmp-api.onrender.com/api/v1/user/getUserProfileInfo", {
+            headers: {
+              Authorization: `Bearer ${token}`, // Assuming userInfo contains the token
+              "Content-Type": "application/json",
+            },
+          });
+  
+          setUserProfile(response.data.data);
+          console.log(response.data.data); // Set user profile data in state
+        } catch (error) {
+          console.error("An error occurred while fetching user profile:", error);
+        }
+      };
+  
+      fetchUserProfile();
+    }, [token]);
+  
+   
   return (
     <div>
             <div className='header'>
                 <h4 style={nameStyle}
-                >Hi Dami</h4>
+                >
+                   Hi, {userProfile?.firstName}
+                
+                </h4>
 
 
                 <div className=' flex justify-between'>
                     <h2
                         style={welcomeStyle}> Duration of your Program</h2>
-                    <input type="text" name="" id="" icon={<SearchOutlined />} placeholder='Search' style={searchBoxStyle} />
+                    
                 </div>
             </div>
     </div>

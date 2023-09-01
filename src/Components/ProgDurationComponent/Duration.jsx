@@ -1,6 +1,5 @@
-import { CalendarFilled, CalendarOutlined, ClockCircleFilled, ClockCircleOutlined } from '@ant-design/icons';
+import { CalendarFilled, CalendarOutlined, ClockCircleOutlined } from '@ant-design/icons';
 import React, { useState, useEffect } from 'react';
-import { AiOutlineCalendar } from 'react-icons/ai';
 import UserHead from './UserHead';
 
 
@@ -24,12 +23,10 @@ const durationStyle = {
     fontWeight: 600,
     lineHeight: '42px',
     letterSpacing: '-0.68px'
-}
+};
 
-const iconShape= {
-    width: 'auto',
-    height : '4rem'
-}
+
+
 
 
 const DurationApp = () => {
@@ -112,8 +109,7 @@ const DurationApp = () => {
 
             <div>
                 <CalendarOutlined/>
-                <AiOutlineCalendar/>
-                
+                                
             </div>
 
         </div>
