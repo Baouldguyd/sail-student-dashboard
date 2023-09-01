@@ -2,7 +2,6 @@ import React from "react";
 import {
   AiOutlineSlack,
   AiOutlineBook,
-  AiOutlineCarryOut,
   AiOutlineSnippets,
   AiOutlineDashboard,
   AiOutlineExport,
@@ -19,7 +18,6 @@ const Sidebar = () => {
   const Navs = [
     { title: "Dashboard", icon: <RiDashboardFill />, path:'/dashboard' },
     { title: "Course Content", icon: <AiOutlineBook />, path:'/coursecontent' },
-    { title: "Attendance", icon: <AiOutlineCarryOut />, path: '/attendance' },
     { title: "Task", icon: <AiOutlineSnippets />, path: '/task' },
     { title: "Program Duration", icon: <AiOutlineDashboard />, path:'/programduration' },
     { title: "Settings", icon: <AiFillSetting/>, path:'/settings', spacing: true},

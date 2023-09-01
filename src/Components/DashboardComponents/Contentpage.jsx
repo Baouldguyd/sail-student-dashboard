@@ -1,13 +1,14 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import learningIcon from '../../Assets/Icon.png'
 import learningShadow from '../../Assets/Shadow.jpg'
 import activityIcon from '../../Assets/activityIcon.png'
 import keyboardIcon from '../../Assets/keyboardIcon.png'
-import { SearchOutlined } from '@ant-design/icons'
-import TaskApp from './TaskApp';
-import keyboardblueIcon from '../../Assets/keyboardblueIcon.png'
 
+import keyboardblueIcon from '../../Assets/keyboardblueIcon.png'
 import EventsApp from './Events'
+import axios from 'axios'
+import { SlackOutlined } from '@ant-design/icons'
+import { Link } from 'react-router-dom'
 
 
 const nameStyle = {
@@ -28,14 +29,6 @@ const welcomeStyle = {
     letterSpacing: '-0.68px'
 }
 
-const searchBoxStyle = {
-    width: '15rem',
-    height: '3rem',
-    flexShrink: 0,
-    padding: '1rem',
-    borderRadius: '10px',
-    boxShadow: '0px 4px 4px 0px rgba(244, 247, 254, 0.25)'
-}
 
 const learningStyle = {
     display: 'flex',
@@ -67,13 +60,14 @@ const discussionStyle = {
 
 const taskStyle = {
     width: '35%',
-height: 'auto',
-flexShrink: 0,
-borderRadius: '20px',
-background: 'var(--secondary-primary-white, #FFF)'
+    height: 'auto',
+    flexShrink: 0,
+    borderRadius: '20px',
+    background: 'var(--secondary-primary-white, #FFF)'
 }
 
 const Contentpage = () => {
+    
     const [isTilted, setIsTilted] = useState(false);
 
     const imageStyle = {
@@ -81,16 +75,33 @@ const Contentpage = () => {
         transition: '0.3s',
         transform: isTilted ? 'rotate(60deg)' : 'rotate(0deg)'
     }
-   
+
     
 
-    // const handleMouseEnter = () => {
-    //     imageStyle.transform = 'rotate(60deg)';
-    //   };
+    const [userProfile, setUserProfile] = useState(null); // State to hold user profile data
+  
+    const token = sessionStorage.getItem('token')
+  
+    useEffect(() => {
+      const fetchUserProfile = async () => {
+        try {
+          const response = await axios.get("https://ssmp-api.onrender.com/api/v1/user/getUserProfileInfo", {
+            headers: {
+              Authorization: `Bearer ${token}`, // Assuming userInfo contains the token
+              "Content-Type": "application/json",
+            },
+          });
+  
+          setUserProfile(response.data.data);
+          console.log(response.data.data); // Set user profile data in state
+        } catch (error) {
+          console.error("An error occurred while fetching user profile:", error);
+        }
+      };
+  
+      fetchUserProfile();
+    }, [token]);
     
-    //   const handleMouseLeave = () => {
-    //     imageStyle.transform = 'rotate(0deg)';
-    //   };
 
 
     return (
@@ -102,11 +113,11 @@ const Contentpage = () => {
         
         <div className='header'>
             <h4 style={nameStyle}
-            >Hi Dami</h4>
+            >Hi, {userProfile?.firstName} {userProfile?.lastName}.</h4>
             <div className=' flex justify-between'>
                 <h2
                 style={welcomeStyle}>Welcome to SAIL!</h2>
-                <input type="text" name="" id="" icon={<SearchOutlined/>} placeholder='Search' style={searchBoxStyle} />
+                
             </div>
         </div>
 
@@ -147,7 +158,7 @@ const Contentpage = () => {
                         lineHeight: '32px',
                         letterSpacing: '-0.48px'
                     }}
-                    >2h 17m</p>
+                    >4h</p>
                 </div>
             </div>
 
@@ -192,6 +203,7 @@ const Contentpage = () => {
             </div>
             <div className='discussion flex' style={discussionStyle}>
             <div>
+                <a href="https://app.slack.com" target="_blank" rel="noopener noreferrer" >
                     <p style={{
                         color: 'white',
                         fontSize: '14px',
@@ -199,7 +211,7 @@ const Contentpage = () => {
                         fontWeight: 500,
                         lineHeight: '24px',
                         letterSpacing: '-0.28px'
-                    }}>Discussion Box</p>
+                    }}>Open Slack </p>
 
                     <p style={{
                         color: 'white',
@@ -210,7 +222,8 @@ const Contentpage = () => {
                         lineHeight: '32px',
                         letterSpacing: '-0.48px'
                     }}
-                    >3 New Messages</p>
+                    >New Messages <SlackOutlined/> </p>
+                    </a>
                 </div>
             
             <div style={{
@@ -241,7 +254,7 @@ const Contentpage = () => {
         >
             <EventsApp/>
             
-
+            
             <div className='upcoming-task'
             style={
                 taskStyle
@@ -253,15 +266,16 @@ const Contentpage = () => {
                         fontStyle: 'normal',
                         fontWeight: 600,
                         lineHeight: '42px',
-                        letterSpacing: '-0.68px'
+                        letterSpacing : '-0.68px'
                     }}
                     
                     >Upcoming Tasks</h1>
 
                 </div>
                 <div className='p-[1rem]'>
-                <TaskApp/>
+                <p>Endeavour to Approach your Weekly Tasks</p>
                 </div>
+                <Link to='/task'>
                 <div className=' flex justify-end mt-[1rem] gap-[8px]'>
                     <h3 style={{
                         color: '#06F',
@@ -277,7 +291,10 @@ const Contentpage = () => {
                     
                     />
                 </div>
+                </Link>
             </div>
+            
+            
         </div>
 
         
